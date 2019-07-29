@@ -38,3 +38,42 @@ window.addEventListener("load", timeNow());
 window.addEventListener("load", dayNow());
 
 
+const list = document.querySelector('ul');
+list.addEventListener('click', function(e) {
+    if(e.target.tagName === 'LI') {
+        e.target.classList.toggle('checked');
+    }
+}, false);
+
+function addItem() {
+    const createLi = document.createElement('li');
+    const task = document.getElementById('task').value;
+
+    if (task === '') {
+        alert("You can't add an empty task!");
+    }
+    else {
+        createLi.textContent = task;
+        document.getElementById('list').appendChild(createLi);
+    }
+
+    const li = document.getElementsByTagName('li');
+    for (let i=0; i < li.length; i++) {
+    const span = document.createElement('span');
+    const x = document.createTextNode('\u00D7');
+    span.className = 'close';
+    span.appendChild(x);
+    li[i].appendChild(span);
+}
+
+    const close = document.getElementsByClassName('close');
+    for (let i=0; i < close.length; i++) {
+    close[i].addEventListener('click', function() {
+        const parent = this.parentElement;
+        parent.style.display = 'none';
+    });
+}
+}
+
+ button = document.getElementById('addTask');
+ button.addEventListener('click', addItem);
