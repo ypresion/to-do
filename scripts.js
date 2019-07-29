@@ -34,7 +34,21 @@ function dayNow() {
 
 }
 
-
-
 window.addEventListener("load", timeNow());
 window.addEventListener("load", dayNow());
+
+function openModal() {
+    const modal = document.getElementById("modal");
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+
+}
+
+const taskAdd = document.getElementById("addTask");
+taskAdd.addEventListener("click", openModal());
+
+const close = document.getElementById("close");
+close.addEventListener("click", closeModal());

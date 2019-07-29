@@ -94,6 +94,7 @@ button:hover {
     font-weight: bold;
     margin: .3em .5em;
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 #task {
