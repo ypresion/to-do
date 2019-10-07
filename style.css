@@ -2,7 +2,7 @@ html, body {
     margin:0;
     padding:0;
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
     font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif; }
 
 .header {
@@ -43,10 +43,10 @@ html, body {
 .list {
     position: relative;
     width: 60vw;
-    border: 1px solid red;
     margin: auto;
     text-align: center;
 }
+
 
 hr {
     color: black;
@@ -65,13 +65,49 @@ button {
     text-decoration: none;
     border: none;
     transform: translateX(-5px);
+    transition: .2s;
 }
 
 button:hover {
     background-color: rgb(40, 33, 85);
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
 
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 1em;
+    margin: 0 0 .5em 0;
+    background: rgb(130, 141, 201);
+    transition: .2s;
+    user-select: none;
+    border-radius: 10px;
+    text-align: left;
+    list-style: none;
+}
+
+ul li:hover {
+    background: rgb(73, 44, 153);
+}
+
+ul li.checked {
+    background: rgb(47, 18, 95);
+    text-decoration: line-through;
+    color: white;
+}
+
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1em;
+    cursor: pointer;
+}
 
 #task {
     width: 70%;
